@@ -226,12 +226,10 @@
         .hero-logo {
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            right: 10%;
+            transform: translateY(-50%);
             opacity: 0.08;
             z-index: 1;
-            animation: float 8s ease-in-out infinite;
-            animation-delay: 1s;
         }
 
         .hero-logo img {
@@ -1031,24 +1029,16 @@
             observer.observe(el);
         });
 
-        // Parallax effect for floating shapes and hero logo
+        // Parallax effect for floating shapes only
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
             const shapes = document.querySelectorAll('.floating-shape');
-            const heroLogo = document.querySelector('.hero-logo');
             
             shapes.forEach((shape, index) => {
                 const speed = 0.5 + (index * 0.1);
                 const yPos = -(scrolled * speed);
                 shape.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.1}deg)`;
             });
-
-            // Parallax effect for hero logo
-            if (heroLogo) {
-                const logoSpeed = 0.3;
-                const yPos = -(scrolled * logoSpeed);
-                heroLogo.style.transform = `translate(-50%, -50%) translateY(${yPos}px) rotate(${scrolled * 0.05}deg)`;
-            }
         });
 
         // Dynamic gradient animation for hero text
