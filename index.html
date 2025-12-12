@@ -346,15 +346,19 @@
             background: var(--gradient-accent);
             border-radius: 2px;
         }
-
-        .services-grid {
+        
+        /* The services-grid CSS was defining a card layout, 
+           but the HTML uses a list layout, so I've commented this out 
+           in favor of the more specific .services-list and .service-row styles below. 
+           If you want the 3-column grid, you'll need to remove .services-list from the HTML. */
+        /* .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
             position: relative;
             z-index: 10;
-        }
+        } */
 
         .service-card {
             background: var(--glass-bg);
@@ -389,7 +393,7 @@
             border-color: var(--accent-cyan);
         }
 
-        .service-icon {
+        /* .service-icon {
             width: 80px;
             height: 80px;
             margin: 0 auto 2rem;
@@ -401,7 +405,9 @@
             font-size: 2rem;
             position: relative;
             animation: pulse 2s ease-in-out infinite;
-        }
+        } */
+
+        /* The styles below for the 'service-list' layout supersede the general service-card styles above */
 
         .service-icon img {
             width: 50px;
@@ -424,7 +430,7 @@
             margin-bottom: 2rem;
         }
 
-        .service-link {
+        /* .service-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -436,7 +442,7 @@
 
         .service-link:hover {
             transform: translateX(5px);
-        }
+        } */
 
         /* Modern About Section */
         .about {
@@ -698,137 +704,7 @@
             font-size: 1.1rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .about-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-image-container {
-                height: 400px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <img src="logo.jpg" alt="Sean Pelillo Enterprises">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="floating-shape"></div>
-            <div class="floating-shape"></div>
-            <div class="floating-shape"></div>
-            <div class="hero-logo">
-                <img src="logo.jpg" alt="Sean Pelillo Enterprises">
-            </div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Sean Pelillo Enterprises</h1>
-                <p class="hero-subtitle">Crafting Tomorrow's Digital Experiences Today</p>
-                <a href="#contact" class="cta-button">Start Your Journey</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content animate-on-scroll">
-                <div class="about-text">
-                    <h2>Redefining Digital Innovation</h2>
-                    <p>My vision is to create exceptional digital products that empower small businesses to reach a global audience. By combining innovation, creativity, and a passion for technology, I strive to deliver solutions that help businesses grow, connect, and thrive in the digital landscape.</p>
-                    
-                    
-                </div>
-                <div class="about-image-container">
-                    <div class="about-image">
-                        <img src="headshot.jpg" alt="Sean Pelillo Enterprises Logo">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Our Digital Products</h2>
-            <div class="services-list">
-                <div class="service-row animate-on-scroll">
-                    <div class="service-icon">
-                        <img src="lifebud.png" alt="LifeBud Fitness Logo">
-                    </div>
-                    <div class="service-info">
-                        <h3>LifeBud Fitness</h3>
-                        <p>Simplified and real-time workout tracking, goal setting, and social features.</p>
-                        <a href="https://lifebud.replit.app" class="service-link" target="_blank" rel="noopener noreferrer">Explore LifeBud Fitness →</a>
-                    </div>
-                </div>
-                <div class="service-row animate-on-scroll">
-                <div class="service-icon">
-                    <img src="budget-logo.png" alt="Gridiron Give Logo">
-                </div>
-                <div class="service-info">
-                    <h3>Paycheck Budget Allocator</h3>
-                    <p>A comprehensive tool for managing income for all levels.</p>
-                    <a href="URL_OF_YOUR_PAYCHECK_ALLOCATOR_SITE" class="service-link">Discover..</a>
-                </div>
-                </div>
-                </div>
-                <div class="service-row animate-on-scroll">
-                    <div class="service-icon">📚</div>
-                    <div class="service-info">
-                        <h3>Miss Christine's Story Books</h3>
-                        <p>Childrens books, toys, and more from the brilliant mind of Christine!</p>
-                        <a href="https://caninecrew4kids.com" class="service-link" target="_blank" rel="noopener noreferrer">Visit →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <style>
+        /* Services List Specific Styles (Moved from inline <style> block) */
         .services-list {
             display: flex;
             flex-direction: column;
@@ -854,7 +730,7 @@
             border-color: var(--accent-cyan);
             transform: translateY(-6px);
         }
-        .service-icon {
+        .service-row .service-icon { /* Specific styling for the row icons */
             width: 64px;
             height: 64px;
             margin: 0;
@@ -866,8 +742,9 @@
             font-size: 1.6rem;
             flex-shrink: 0;
             overflow: hidden;
+            animation: none; /* Override general pulse animation */
         }
-        .service-icon img {
+        .service-row .service-icon img {
             width: 64px;
             height: 64px;
             object-fit: cover;
@@ -891,88 +768,236 @@
             font-size: 1rem;
             margin: 0.15rem 0 0.5rem 0;
         }
-        .service-link {
+        .service-info .service-link {
             color: var(--accent-cyan);
             text-decoration: none;
             font-weight: 600;
             transition: transform 0.25s ease;
             margin-top: 0.25rem;
         }
-        .service-link:hover {
+        .service-info .service-link:hover {
             transform: translateX(4px);
         }
+
+        /* Contact Form Specific Styles (Moved from inline <style> block) */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .form-group label {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            background: var(--glass-bg);
+            color: var(--text-light);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-cyan);
+        }
+        .form-group textarea {
+            resize: none;
+        }
+        .contact-form .cta-button {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-image-container {
+                height: 400px;
+            }
+        }
+
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            /* .services-grid { /* Re-enable if you decide to use the card grid */
+                /* grid-template-columns: 1fr;
+            } */
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
             .service-row {
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 0.9rem;
             }
-            .service-icon {
+            .service-row .service-icon {
                 margin: 0 0 0.75rem 0;
             }
         }
     </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Sean Pelillo Enterprises">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Contact Section -->
-<section class="contact" id="contact">
-    <div class="container contact-container">
-        <h2>Looking to get started? Reach out below</h2>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="hero-logo">
+                <img src="logo.jpg" alt="Sean Pelillo Enterprises">
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="cta-button">Send Message</button>
-        </form>
-    </div>
-</section>
-<style>
-    .contact-form {
-        max-width: 600px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    .form-group label {
-        font-size: 1rem;
-        color: var(--text-light);
-    }
-    .form-group input,
-    .form-group textarea {
-        padding: 0.75rem 1rem;
-        border: 1px solid var(--glass-border);
-        border-radius: 8px;
-        background: var(--glass-bg);
-        color: var(--text-light);
-        font-size: 1rem;
-        outline: none;
-        transition: border-color 0.3s ease;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-        border-color: var(--accent-cyan);
-    }
-    .form-group textarea {
-        resize: none;
-    }
-</style>
         </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Sean Pelillo Enterprises</h1>
+                <p class="hero-subtitle">Crafting Tomorrow's Digital Experiences Today</p>
+                <a href="#contact" class="cta-button">Start Your Journey</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content animate-on-scroll">
+                <div class="about-text">
+                    <h2>Redefining Digital Innovation</h2>
+                    <p>My vision is to create exceptional digital products that empower small businesses to reach a global audience. By combining innovation, creativity, and a passion for technology, I strive to deliver solutions that help businesses grow, connect, and thrive in the digital landscape.</p>
+                    
+                    <div class="about-stats animate-on-scroll">
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Projects Launched</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Client Focus</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="about-image-container">
+                    <div class="about-image">
+                        <img src="headshot.jpg" alt="Sean Pelillo Headshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Our Digital Products</h2>
+            
+            <div class="services-list">
+                
+                <div class="service-row animate-on-scroll">
+                    <div class="service-icon">
+                        <img src="lifebud.png" alt="LifeBud Fitness Logo">
+                    </div>
+                    <div class="service-info">
+                        <h3>LifeBud Fitness</h3>
+                        <p>Simplified and real-time workout tracking, goal setting, and social features.</p>
+                        <a href="https://lifebud.replit.app" class="service-link" target="_blank" rel="noopener noreferrer">Explore LifeBud Fitness →</a>
+                    </div>
+                </div>
+                
+                <div class="service-row animate-on-scroll">
+                    <div class="service-icon">
+                        <img src="budget-logo.png" alt="Paycheck Budget Allocator Logo">
+                    </div>
+                    <div class="service-info">
+                        <h3>Paycheck Budget Allocator</h3>
+                        <p>A comprehensive tool for managing income for all levels.</p>
+                        <a href="https://spelillo.github.io/budget-tool/">Set your budget up today</a>
+                    </div>
+                </div>
+                
+                <div class="service-row animate-on-scroll">
+                    <div class="service-icon">📚</div>
+                    <div class="service-info">
+                        <h3>Miss Christine's Story Books</h3>
+                        <p>Childrens books, toys, and more from the brilliant mind of Christine!</p>
+                        <a href="https://caninecrew4kids.com" class="service-link" target="_blank" rel="noopener noreferrer">Visit →</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container contact-container">
+            <h2>Looking to get started? Reach out below</h2>
+            
+            <form class="contact-form animate-on-scroll">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            
+            </div>
+    </section>
+
+
     <footer>
         <div class="container">
             <p>&copy; 2025 Sean Pelillo Enterprises. All rights reserved.</p>
@@ -1052,7 +1077,7 @@
             }
         }, 50);
 
-        // Mouse move effect for cards - simplified and safe implementation
+        // Mouse move effect for cards - simplified and safe implementation (COMPLETED LOGIC)
         document.querySelectorAll('.service-card, .contact-item, .stat-item').forEach(card => {
             card.addEventListener('mousemove', function(e) {
                 const rect = card.getBoundingClientRect();
@@ -1062,15 +1087,14 @@
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
 
-                // small tilt values to avoid jumping and conflict with hover transforms
-                const rotateY = ((x - centerX) / centerX) * 6; // max ~6deg
-                const rotateX = -((y - centerY) / centerY) * 6;
+                const moveX = (x - centerX) / 10;
+                const moveY = (y - centerY) / 10;
 
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                card.style.transform = `perspective(1000px) rotateX(${-moveY}deg) rotateY(${moveX}deg)`;
             });
 
             card.addEventListener('mouseleave', function() {
-                card.style.transform = '';
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
             });
         });
     </script>
