@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sean Pelillo | Web Developer</title>
-        <link rel="icon" type="image/png" href="SP.png">
+    
+    <link rel="icon" type="image/png" href="SPE.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +43,7 @@
 
         /* Clean Header */
         header {
-            padding: 2.5rem 0;
+            padding: 1.5rem 0;
             border-bottom: 1px solid var(--border);
             margin-bottom: 4rem;
             background: white;
@@ -54,13 +55,10 @@
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: -0.5px;
-            text-decoration: none;
-            color: var(--accent);
+        .logo-img {
+            height: 50px; /* Adjust height as needed */
+            width: auto;
+            display: block;
         }
 
         /* Intro Section */
@@ -218,6 +216,18 @@
             font-size: 0.9rem;
         }
 
+        .footer-logo {
+            height: 40px;
+            width: auto;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .footer-logo:hover {
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
             .projects {
                 grid-template-columns: 1fr;
@@ -233,8 +243,10 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">SEAN PELILLO ENTERPRISES</a>
-                <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">WEB SOLUTIONS</div>
+                <a href="#">
+                    <img src="SPE.png" alt="Sean Pelillo Enterprises Logo" class="logo-img">
+                </a>
+                <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px;">WEB SOLUTIONS</div>
             </nav>
         </div>
     </header>
@@ -242,7 +254,7 @@
     <main class="container">
         <section class="intro">
             <h1>I’m Sean, and I love making websites.</h1>
-            <p>I build clean, effective digital tools for businesses and community leaders. I believe in simple and modern software that is user focused, without the extra noise.</p>
+            <p>I build clean, effective digital tools for businesses and community leaders. I believe in software that solves problems without the extra noise.</p>
         </section>
 
         <span class="section-label">Active Projects</span>
@@ -277,19 +289,10 @@
         </section>
     </main>
 
-   <footer>
+    <footer>
         <div class="container">
+            <img src="SPE.png" alt="Sean Pelillo Enterprises" class="footer-logo">
             <p>&copy; 2026 Sean Pelillo Enterprises. Proudly based in Knoxville, TN.</p>
-            <p style="margin-top: 10px;">
-                <a href="about-legal.html" style="color: var(--text-muted); text-decoration: underline; font-size: 0.8rem;">
-                    Business Disclosure & Legal Info
-                </a>
-                    &nbsp;|&nbsp;
-
-                <a href="gg-disclosure.html" style="color: var(--text-muted); text-decoration: underline; font-size: 0.8rem;">
-                    Gridiron Give Disclosure
-                </a>
-            </p>
         </div>
     </footer>
 
