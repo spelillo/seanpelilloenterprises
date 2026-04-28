@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gridiron Give | Deep Dive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        /* [Copy the CSS block from PitchModel here for a shared look] */
+        :root { --bg: #f8fafc; --text-main: #0f172a; --text-muted: #475569; --accent: #262728; --accent-light: #e6f0ff; --border: #e2e8f0; --card-bg: #ffffff; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; margin: 0; padding: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+        .hero { padding: 6rem 0 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero-text h1 { font-family: 'Outfit'; font-size: 3.5rem; margin-bottom: 1rem; letter-spacing: -1px; }
+        .hero-image img { width: 100%; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 1px solid var(--border); }
+        .back-nav { padding: 2rem 0; }
+        .back-link { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.9rem; transition: color 0.2s; }
+        .tag { background: var(--accent-light); color: var(--accent); padding: 6px 14px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-right: 10px; text-transform: uppercase; }
+        .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; margin-top: 4rem; padding-bottom: 6rem; }
+        h2 { font-family: 'Outfit'; font-size: 2rem; margin-bottom: 1.5rem; }
+        .cta-box { background: white; padding: 2rem; border-radius: 24px; border: 1px solid var(--border); position: sticky; top: 2rem; }
+        .contact-btn { display: block; text-align: center; background: var(--accent); color: white; padding: 1rem; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 1.5rem; transition: transform 0.2s; }
+        @media (max-width: 768px) { .hero, .content-grid { grid-template-columns: 1fr; gap: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="back-nav">
+            <a href="index.html" class="back-link">← Back to Portfolio</a>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-text">
+                <span class="tag">Full-Stack SaaS</span>
+                <h1>Gridiron Give</h1>
+                <p style="font-size: 1.25rem; color: var(--text-muted);">A specialized fundraising platform built to empower youth athletic teams through modern web tech.</p>
+                <a href="https://gridirongive.org" target="_blank" class="contact-btn">Visit Website</a>
+            </div>
+            <div class="hero-image">
+                <img src="ggblue.png" alt="Gridiron Give Interface">
+            </div>
+        </section>
+
+        <main class="content-grid">
+            <div class="details">
+                <section>
+                    <h2>The Vision</h2>
+                    <p>Traditional fundraising platforms often feel cluttered and take significant percentages of team revenue. <strong>Gridiron Give</strong> was designed to be "user-focused, without the extra noise."</p>
+                    <p style="margin-top: 1rem;">The goal was to create a friction-less experience for coaches to launch a campaign in minutes and for donors to support their teams in seconds.</p>
+                </section>
+
+                <section style="margin-top: 4rem;">
+                    <h2>Technical Deep Dive</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1.5rem;">
+                            <strong>Frontend Architecture:</strong> Developed using <strong>React</strong> for a fast, single-page application experience that remains responsive on mobile devices.
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <strong>Backend & Security:</strong> Powered by <strong>Firebase</strong>. I implemented real-time database listeners to ensure donation bars and goal trackers update instantly across all users.
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <strong>FinTech Integration:</strong> Integrated <strong>Stripe Connect</strong> to handle secure payments and ensure that funds are routed directly and safely to the sports organizations.
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            <aside>
+                <div class="cta-box">
+                    <h3 style="font-family: 'Outfit'; margin-bottom: 1rem;">Build Profile</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tag" style="margin: 0;">React</span>
+                        <span class="tag" style="margin: 0;">Firebase</span>
+                        <span class="tag" style="margin: 0;">Stripe API</span>
+                        <span class="tag" style="margin: 0;">Node.js</span>
+                    </div>
+                    <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--border);">
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Built as a complete end-to-end solution for Sean Pelillo Enterprises.</p>
+                    <a href="mailto:spelillo11@gmail.com" class="contact-btn" style="background: transparent; color: var(--accent); border: 2px solid var(--accent);">Inquire About Dev</a>
+                </div>
+            </aside>
+        </main>
+    </div>
+</body>
+</html>

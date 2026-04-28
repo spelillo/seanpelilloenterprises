@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PitchModel | Deep Dive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --accent: #262728;
+            --accent-light: #e6f0ff;
+            --border: #e2e8f0;
+            --card-bg: #ffffff;
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; margin: 0; padding: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+        
+        .hero { padding: 6rem 0 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero-text h1 { font-family: 'Outfit'; font-size: 3.5rem; margin-bottom: 1rem; letter-spacing: -1px; }
+        .hero-image img { width: 100%; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 1px solid var(--border); }
+        
+        .back-nav { padding: 2rem 0; }
+        .back-link { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.9rem; transition: color 0.2s; }
+        .back-link:hover { color: var(--accent); }
+
+        .tag { background: var(--accent-light); color: var(--accent); padding: 6px 14px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-right: 10px; text-transform: uppercase; }
+        
+        .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; margin-top: 4rem; padding-bottom: 6rem; }
+        h2 { font-family: 'Outfit'; font-size: 2rem; margin-bottom: 1.5rem; }
+        .cta-box { background: white; padding: 2rem; border-radius: 24px; border: 1px solid var(--border); position: sticky; top: 2rem; }
+        
+        .contact-btn { display: block; text-align: center; background: var(--accent); color: white; padding: 1rem; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 1.5rem; transition: transform 0.2s; }
+        .contact-btn:hover { transform: translateY(-2px); }
+
+        @media (max-width: 768px) {
+            .hero, .content-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .hero { padding-top: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="back-nav">
+            <a href="index.html" class="back-link">← Back to Portfolio</a>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-text">
+                <span class="tag">Predictive Analytics</span>
+                <h1>PitchModel</h1>
+                <p style="font-size: 1.25rem; color: var(--text-muted);">An MLB decision-support tool that uses historical data to forecast the next pitch in real-time.</p>
+                <a href="https://spelillo.shinyapps.io/PitchModel/" target="_blank" class="contact-btn">Launch Application</a>
+            </div>
+            <div class="hero-image">
+                <img src="pitchmodel.png" alt="PitchModel App View">
+            </div>
+        </section>
+
+        <main class="content-grid">
+            <div class="details">
+                <section>
+                    <h2>About the Project</h2>
+                    <p>In high-stakes baseball, information is everything. <strong>PitchModel</strong> was developed to explore the patterns of MLB pitchers and provide fans or coaches with a "most likely" outcome for the next delivery based on the current game state.</p>
+                    <p style="margin-top: 1rem;">By analyzing thousands of data points including pitch count, runner placement, and previous pitch results, the model identifies tendencies that aren't always visible to the naked eye.</p>
+                </section>
+
+                <section style="margin-top: 4rem;">
+                    <h2>How It Works</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1.5rem;">
+                            <strong>Data Processing:</strong> Utilizes R and Statcast data to build a robust foundation of pitch sequences.
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <strong>Logic Engine:</strong> Employs decision-tree principles to calculate probabilities based on situational variables like "Innings," "Outs," and "Score Differential."
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <strong>Interface:</strong> Built with R Shiny to provide a reactive, user-friendly experience that updates predictions instantly as the user toggles game parameters.
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            <aside>
+                <div class="cta-box">
+                    <h3 style="font-family: 'Outfit'; margin-bottom: 1rem;">Tech Stack</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tag" style="margin: 0;">R Language</span>
+                        <span class="tag" style="margin: 0;">Shiny</span>
+                        <span class="tag" style="margin: 0;">Statcast Data</span>
+                        <span class="tag" style="margin: 0;">Forecasting</span>
+                    </div>
+                    
+                    
+                </div>
+            </aside>
+        </main>
+    </div>
+</body>
+</html>
