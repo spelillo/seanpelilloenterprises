@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Largent — Information & Disclosures</title>
+  <link rel="icon" type="image/png" href="largent-white copy.png">
+  <style>
+    :root{
+      --navy:#0f1729;
+      --accent:#42c454;
+      --muted:#7b8aa3;
+      --bg:#ffffff;
+      --card:#0f172933;
+      --radius:12px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#fbfdff 0%, #f7f9fc 100%);color:var(--navy);}
+    .wrap{max-width:980px;margin:48px auto;padding:28px;}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
+    header img{height:56px;width:auto;display:block}
+    h1{margin:0;font-size:clamp(20px,3.6vw,34px);color:var(--navy)}
+    p.lead{margin:8px 0 22px;color:var(--muted);font-size:0.98rem}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(245,247,250,0.9));border:1px solid rgba(15,23,41,0.06);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,41,0.06);display:flex;flex-direction:column;gap:10px}
+    .card h3{margin:0;font-size:1.05rem;color:var(--navy)}
+    .card p{margin:0;color:var(--muted);font-size:0.95rem}
+    .card a{margin-top:8px;color:var(--accent);text-decoration:none;font-weight:600}
+    .meta{font-size:0.86rem;color:var(--muted)}
+    footer{margin-top:28px;color:var(--muted);font-size:0.9rem}
+    .note{margin-top:10px;color:#6c7280;font-size:0.88rem}
+    @media (max-width:560px){.wrap{padding:18px}}
+
+    /* Modal / doc viewer styles */
+    .modal-overlay{position:fixed;inset:0;background:rgba(4,8,15,0.6);display:none;align-items:center;justify-content:center;z-index:1200;padding:28px;}
+    .modal-overlay.open{display:flex;}
+    .modal-window{background:linear-gradient(180deg,#ffffff,#fbfcff);max-width:920px;width:100%;max-height:86vh;border-radius:14px;box-shadow:0 20px 50px rgba(7,12,20,0.6);overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(15,23,41,0.08)}
+    .modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid rgba(15,23,41,0.04)}
+    .modal-title{font-weight:700;color:var(--navy);font-size:1.05rem}
+    .modal-controls{display:flex;gap:10px;align-items:center}
+    .btn{background:transparent;border:1px solid rgba(15,23,41,0.06);padding:8px 12px;border-radius:8px;color:var(--navy);cursor:pointer;font-weight:600}
+    .btn.ghost{background:transparent}
+    .btn.primary{background:var(--accent);color:white;border:none}
+    .modal-body{padding:18px;overflow:auto;font-size:0.95rem;color:var(--navy);line-height:1.6}
+    .modal-body h1,.modal-body h2,.modal-body h3{color:var(--navy);margin-top:0}
+    .modal-body pre{background:#0f172911;padding:12px;border-radius:8px;overflow:auto}
+    .modal-body code{background:#0f172911;padding:2px 6px;border-radius:6px}
+    .modal-footer{padding:12px 18px;border-top:1px solid rgba(15,23,41,0.04);display:flex;justify-content:flex-end;gap:10px}
+    .file-meta{font-size:0.86rem;color:var(--muted);margin-left:8px}
+
+    /* make links in docs visible */
+    .modal-body a{color:var(--accent);font-weight:600}
+
+    /* small placeholder preview (thumbnail) for each card */
+    .card-thumb{height:68px;width:100%;display:flex;align-items:center;justify-content:center;border-radius:8px;background:linear-gradient(180deg,#fff,#f3f6f9);border:1px dashed rgba(15,23,41,0.03);margin-bottom:10px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="largent-white copy.png" alt="Largent / Sean Pelillo logo">
+      <div>
+        <h1>Largent — Information & Disclosures</h1>
+        <p class="lead">Policies, disclosures, and consent language for the Largent budgeting app. Click any resource to open the document in a viewer.</p>
+      </div>
+    </header>
+
+    <div class="cards" id="docsGrid">
+      <div class="card">
+        <div class="card-thumb"><strong>Business</strong></div>
+        <h3>Business Disclosure</h3>
+        <p>High-level business and product disclosure for Largent (ownership, model, third-party services).</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+          <a class="card-link doc-link" href="largent-business-disclosure%20copy.md" data-file="largent-business-disclosure copy.md">Open Business Disclosure →</a>
+          <div class="meta">File: largent-business-disclosure copy.md</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-thumb"><strong>Privacy</strong></div>
+        <h3>Privacy Policy</h3>
+        <p>Details on what data Largent collects, how it’s used, retention, and user choices.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+          <a class="card-link doc-link" href="largent-privacy-policy%20copy.md" data-file="largent-privacy-policy copy.md">Open Privacy Policy →</a>
+          <div class="meta">File: largent-privacy-policy copy.md</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-thumb"><strong>Security</strong></div>
+        <h3>Security Policy</h3>
+        <p>Baseline security practices and responsibilities for Largent operations and infrastructure.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+          <a class="card-link doc-link" href="largent-security-policy%20copy.md" data-file="largent-security-policy copy.md">Open Security Policy →</a>
+          <div class="meta">File: largent-security-policy copy.md</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-thumb"><strong>Retention</strong></div>
+        <h3>Data Retention & Deletion</h3>
+        <p>How long data is kept, deletion requests, backups, and retention principles for user data.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+          <a class="card-link doc-link" href="largent-data-retention-policy%20copy.md" data-file="largent-data-retention-policy copy.md">Open Retention Policy →</a>
+          <div class="meta">File: largent-data-retention-policy copy.md</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-thumb"><strong>Plaid</strong></div>
+        <h3>Plaid Consent Language</h3>
+        <p>Recommended short and expanded consent copy to present when users connect bank accounts via Plaid.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+          <a class="card-link doc-link" href="largent-plaid-consent-language%20copy.md" data-file="largent-plaid-consent-language copy.md">Open Plaid Consent →</a>
+          <div class="meta">File: largent-plaid-consent-language copy.md</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      Notes:
+      <ul>
+        <li>If any link returns a 404 on GitHub Pages, confirm the filenames and casing in the repository match exactly (GitHub Pages is case-sensitive).</li>
+        <li>Recommended: rename files to remove " copy" and spaces for cleaner URLs (e.g. largent-privacy-policy.md). If you want, I can provide git commands to rename and update links.</li>
+    </ul>
+    </div>
+
+    <footer>
+      <a href="index.html">← Back to Sean Pelillo Enterprises</a>
+    </footer>
+  </div>
+
+  <!-- modal viewer -->
+  <div id="docModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-window" role="document" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="modal-title" id="modalTitle">Document</div>
+          <div class="file-meta" id="fileMeta"></div>
+        </div>
+        <div class="modal-controls">
+          <a id="rawLink" class="btn ghost" href="#" target="_blank" rel="noopener noreferrer">Open raw</a>
+          <button id="closeModal" class="btn" aria-label="Close document">Close</button>
+        </div>
+      </div>
+      <div class="modal-body" id="modalBody" tabindex="0">
+        <!-- markdown content injected here -->
+      </div>
+      <div class="modal-footer">
+        <button id="closeFooter" class="btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- marked for markdown -> html -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    (function(){
+      const modal = document.getElementById('docModal');
+      const body = document.getElementById('modalBody');
+      const titleEl = document.getElementById('modalTitle');
+      const fileMeta = document.getElementById('fileMeta');
+      const rawLink = document.getElementById('rawLink');
+      const openButtons = document.querySelectorAll('.doc-link');
+
+      function openModal(name, filePath, html){
+        titleEl.textContent = name;
+        fileMeta.textContent = filePath;
+        rawLink.href = encodeURI(filePath);
+        body.innerHTML = html;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden','false');
+        body.focus();
+      }
+
+      function closeModal(){
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden','true');
+        body.innerHTML = '';
+      }
+
+      async function fetchAndRender(filePath){
+        try{
+          const res = await fetch(encodeURI(filePath));
+          if(!res.ok) throw new Error('Unable to fetch file ('+res.status+')');
+          const text = await res.text();
+          // convert markdown to html
+          const html = marked.parse(text);
+          return html;
+        }catch(err){
+          return '<pre style="color:#a33">Error loading file: '+err.message+'</pre>';
+        }
+      }
+
+      openButtons.forEach(btn=>{
+        btn.addEventListener('click', async (e)=>{
+          e.preventDefault();
+          const filePath = btn.dataset.file || btn.getAttribute('href');
+          const name = btn.closest('.card')?.querySelector('h3')?.textContent || 'Document';
+          const html = await fetchAndRender(filePath);
+          openModal(name, filePath, html);
+        });
+      });
+
+      // close handlers
+      document.getElementById('closeModal').addEventListener('click', closeModal);
+      document.getElementById('closeFooter').addEventListener('click', closeModal);
+      modal.addEventListener('click', (e)=>{
+        if(e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
+    })();
+  </script>
+</body>
+</html>
