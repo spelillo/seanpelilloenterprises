@@ -20,6 +20,7 @@
     header{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
     header img{height:56px;width:auto;display:block}
     h1{margin:0;font-size:clamp(20px,3.6vw,34px);color:var(--navy)}
+    h2{margin:0;font-size:clamp(22px,4vw,36px);color:var(--navy)}
     p.lead{margin:8px 0 22px;color:var(--muted);font-size:0.98rem}
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(245,247,250,0.9));border:1px solid rgba(15,23,41,0.06);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,41,0.06);display:flex;flex-direction:column;gap:10px}
@@ -29,7 +30,55 @@
     .meta{font-size:0.86rem;color:var(--muted)}
     footer{margin-top:28px;color:var(--muted);font-size:0.9rem}
     .note{margin-top:10px;color:#6c7280;font-size:0.88rem}
-    @media (max-width:560px){.wrap{padding:18px}}
+    .section-label{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(66,196,84,0.12);color:#1f6d2c;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase}
+    .intro{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,0.9fr);gap:18px;align-items:stretch;margin:26px 0 28px}
+    .intro-hero{padding:28px;border-radius:22px;background:linear-gradient(135deg, rgba(66,196,84,0.16), rgba(66,196,84,0.06) 55%, rgba(255,255,255,0.95));border:1px solid rgba(66,196,84,0.22);box-shadow:0 14px 36px rgba(15,23,41,0.08);display:flex;flex-direction:column;gap:16px}
+    .intro-hero p{margin:0;color:#4a5b74;font-size:1rem;line-height:1.65;max-width:62ch}
+    .intro-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .intro-point{padding:16px;border-radius:16px;background:rgba(255,255,255,0.78);border:1px solid rgba(15,23,41,0.06)}
+    .intro-point strong{display:block;margin-bottom:6px;color:var(--navy);font-size:0.98rem}
+    .intro-point span{display:block;color:#5f7088;font-size:0.92rem;line-height:1.5}
+    .intro-side{padding:24px;border-radius:22px;background:linear-gradient(180deg,#0f1729,#16233b);color:#f8fbff;box-shadow:0 14px 36px rgba(15,23,41,0.16);display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+    .intro-side h3{margin:0;font-size:1.15rem;color:#ffffff}
+    .intro-side p{margin:0;color:rgba(255,255,255,0.8);line-height:1.6;font-size:0.95rem}
+    .benefit-list{display:grid;gap:10px}
+    .benefit-item{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)}
+    .benefit-dot{width:10px;height:10px;border-radius:999px;background:var(--accent);margin-top:6px;flex:0 0 auto;box-shadow:0 0 0 6px rgba(66,196,84,0.12)}
+    .benefit-item span{color:rgba(255,255,255,0.86);font-size:0.92rem;line-height:1.5}
+    .docs-heading{display:flex;flex-direction:column;gap:8px;margin:8px 0 18px}
+    .docs-heading p{margin:0;color:var(--muted);max-width:70ch;line-height:1.6}
+    .live-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 18px;
+      border-radius:999px;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 10px 24px rgba(66,196,84,0.22);
+      width:fit-content;
+      transition:transform 180ms ease, box-shadow 180ms ease;
+    }
+    .live-link:hover{
+      transform:translateY(-1px);
+      box-shadow:0 14px 28px rgba(66,196,84,0.28);
+    }
+    .live-link-secondary{
+      color:#b8f7c0;
+      font-weight:600;
+      text-decoration:none;
+    }
+    @media (max-width:820px){
+      .intro{grid-template-columns:1fr;}
+      .intro-points{grid-template-columns:1fr;}
+    }
+    @media (max-width:560px){
+      .wrap{padding:18px}
+      .intro-hero,.intro-side{padding:22px}
+      .benefit-item,.intro-point{padding:14px}
+    }
 
     /* Modal / doc viewer styles */
     .modal-overlay{position:fixed;inset:0;background:rgba(4,8,15,0.6);display:none;align-items:center;justify-content:center;z-index:1200;padding:28px;}
@@ -64,6 +113,61 @@
         <p class="lead">Policies, disclosures, and consent language for the Largent budgeting app. Click any resource to open the document in a viewer.</p>
       </div>
     </header>
+
+    <section class="intro" aria-labelledby="largentIntroTitle">
+      <div class="intro-hero">
+        <span class="section-label">Why Largent</span>
+        <h2 id="largentIntroTitle">A cleaner way to budget from real monthly income.</h2>
+        <p>Largent is a personal budgeting app built to help people plan month to month with more confidence. Instead of guessing from rough annual numbers, Largent helps users estimate accurate take-home income, map out a practical monthly ledger, and track spending against the plan they actually set.</p>
+        <div class="intro-points">
+          <div class="intro-point">
+            <strong>More accurate starting numbers</strong>
+            <span>Income planning begins with realistic take-home pay estimates so budgeting is built on what a user can actually spend each month.</span>
+          </div>
+          <div class="intro-point">
+            <strong>Month-by-month planning</strong>
+            <span>Users can allocate money across savings, fixed costs, and variable spending categories in a simple, editable monthly structure.</span>
+          </div>
+          <div class="intro-point">
+            <strong>Real-time transaction visibility</strong>
+            <span>Premium bank connections can bring in statement activity so budgets stay aligned with real purchases as they happen.</span>
+          </div>
+          <div class="intro-point">
+            <strong>Built for clarity, not clutter</strong>
+            <span>Largent is designed to feel lightweight, understandable, and useful for everyday budgeting without the noise of traditional finance dashboards.</span>
+          </div>
+        </div>
+        <a class="live-link" href="https://largent-qsjy.onrender.com" target="_blank" rel="noopener noreferrer">Visit the live Largent app</a>
+      </div>
+
+      <aside class="intro-side" aria-label="Largent benefits overview">
+        <div>
+          <span class="section-label" style="background:rgba(66,196,84,0.16);color:#7ff08f">Key benefits</span>
+        </div>
+        <div class="benefit-list">
+          <div class="benefit-item">
+            <div class="benefit-dot" aria-hidden="true"></div>
+            <span>Helps users budget around true take-home pay instead of inflated gross-income assumptions.</span>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-dot" aria-hidden="true"></div>
+            <span>Supports more accurate monthly planning with flexible category allocation and budget tracking.</span>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-dot" aria-hidden="true"></div>
+            <span>Can connect to bank statement activity in real time for a more current, practical view of spending.</span>
+          </div>
+        </div>
+        <p>This page contains the policy and disclosure materials that support the Largent product experience, including privacy, security, retention, and consent documentation.</p>
+        <p><a class="live-link-secondary" href="https://largent-qsjy.onrender.com" target="_blank" rel="noopener noreferrer">Live app: largent-qsjy.onrender.com</a></p>
+      </aside>
+    </section>
+
+    <section class="docs-heading" aria-labelledby="docsTitle">
+      <span class="section-label">Documents</span>
+      <h2 id="docsTitle">Reference documents and disclosures</h2>
+      <p>These resources explain how Largent is operated, what data it uses, how information is protected, and how connected financial data is handled inside the product.</p>
+    </section>
 
     <div class="cards" id="docsGrid">
       <div class="card">
@@ -122,7 +226,7 @@
       <ul>
         <li>If any link returns a 404 on GitHub Pages, confirm the filenames and casing in the repository match exactly (GitHub Pages is case-sensitive).</li>
         <li>Recommended: rename files to remove " copy" and spaces for cleaner URLs (e.g. largent-privacy-policy.md). If you want, I can provide git commands to rename and update links.</li>
-    </ul>
+      </ul>
     </div>
 
     <footer>
@@ -130,7 +234,6 @@
     </footer>
   </div>
 
-  <!-- modal viewer -->
   <div id="docModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-window" role="document" aria-labelledby="modalTitle">
       <div class="modal-header">
@@ -143,16 +246,13 @@
           <button id="closeModal" class="btn" aria-label="Close document">Close</button>
         </div>
       </div>
-      <div class="modal-body" id="modalBody" tabindex="0">
-        <!-- markdown content injected here -->
-      </div>
+      <div class="modal-body" id="modalBody" tabindex="0"></div>
       <div class="modal-footer">
         <button id="closeFooter" class="btn">Close</button>
       </div>
     </div>
   </div>
 
-  <!-- marked for markdown -> html -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     (function(){
@@ -184,7 +284,6 @@
           const res = await fetch(encodeURI(filePath));
           if(!res.ok) throw new Error('Unable to fetch file ('+res.status+')');
           const text = await res.text();
-          // convert markdown to html
           const html = marked.parse(text);
           return html;
         }catch(err){
@@ -202,7 +301,6 @@
         });
       });
 
-      // close handlers
       document.getElementById('closeModal').addEventListener('click', closeModal);
       document.getElementById('closeFooter').addEventListener('click', closeModal);
       modal.addEventListener('click', (e)=>{
