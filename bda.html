@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Development Agent | Sean Pelillo Enterprises</title>
+
+  <style>
+    :root {
+      --navy: #0f1f35;
+      --navy-light: #172d4a;
+      --blue: #2563eb;
+      --gray: #64748b;
+      --light-gray: #f5f7fa;
+      --border: #e2e8f0;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light-gray);
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    .page-wrapper {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+
+    .logo-placeholder {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-placeholder img {
+      height: 46px;
+      width: auto;
+      display: block;
+    }
+
+    .logo-text {
+      font-size: 15px;
+      color: var(--gray);
+    }
+
+    .hero {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 56px;
+      box-shadow: 0 10px 30px rgba(15, 31, 53, 0.06);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 44px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--navy);
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--gray);
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .ownership {
+      display: inline-block;
+      background: #eef4ff;
+      color: var(--navy);
+      border: 1px solid #dbeafe;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 18px rgba(15, 31, 53, 0.04);
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      color: var(--navy);
+    }
+
+    h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .section p {
+      color: var(--gray);
+      margin-bottom: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      background: #ffffff;
+    }
+
+    .card p {
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .step {
+      border-left: 4px solid var(--blue);
+      background: #f8fafc;
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+
+    .legal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .legal-link {
+      display: block;
+      text-decoration: none;
+      color: var(--navy);
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      transition: all 0.2s ease;
+    }
+
+    .legal-link:hover {
+      border-color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .legal-link span {
+      display: block;
+      font-size: 14px;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--gray);
+      font-size: 14px;
+      padding-top: 24px;
+    }
+
+    .footer a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        padding: 36px 24px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .grid,
+      .steps,
+      .legal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page-wrapper">
+
+    <!-- Logo Placeholder -->
+    <header class="header">
+        <div class="logo-placeholder">
+            <a href="https://businessdevelopmentagent.replit.app">
+                <img src="header-dashboard.png" alt="Business Development Agent Logo" />
+            </a>
+            <div>
+            <strong>Sean Pelillo Enterprises</strong>
+            <div class="logo-text">Business software, automation, and digital tools</div>
+            </div>
+        </div>
+
+        
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="eyebrow">Business Development Agent</div>
+      <h1>AI-powered quoting and customer intake for local service businesses.</h1>
+      <p>
+        Business Development Agent, also known as BDA, is a software platform that helps local service businesses
+        capture customer requests, ask the right project questions, generate preliminary quotes, and deliver a cleaner
+        quoting experience through a simple website widget.
+      </p>
+      <div class="ownership">
+        Owned and operated by Sean Pelillo Enterprises
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section">
+      <h2>About BDA</h2>
+      <p>
+        Business Development Agent is designed for service-based businesses that need a better way to handle customer
+        inquiries, estimate requests, and quote preparation. Instead of relying only on phone calls, scattered messages,
+        or generic contact forms, BDA gives each business a structured digital agent that can guide customers through
+        the quote request process.
+      </p>
+      <p>
+        Each business configures its own services, pricing rules, service areas, operating preferences, quote formatting,
+        and customer communication style. BDA then uses that information to help generate business-specific preliminary
+        quotes and customer summaries.
+      </p>
+      <p>
+        BDA does not replace the business owner’s final judgment. It is intended to support customer intake and quoting,
+        while the business remains responsible for reviewing and confirming final pricing, service terms, and project
+        scope.
+      </p>
+    </section>
+
+    <!-- What It Does -->
+    <section class="section">
+      <h2>What BDA Helps With</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Customer Intake</h3>
+          <p>
+            Guides website visitors through a simple quote request flow and collects useful project details.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Preliminary Quotes</h3>
+          <p>
+            Uses business-specific services, pricing rules, and customer inputs to generate preliminary quote ranges.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Quote Formatting</h3>
+          <p>
+            Creates cleaner quote summaries and quote documents using the business’s selected quote format.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Website Widget</h3>
+          <p>
+            Allows businesses to place a Business Development Agent directly on their website.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Business Rules</h3>
+          <p>
+            Supports company-specific service areas, policies, pricing assumptions, and estimating standards.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Lead Summaries</h3>
+          <p>
+            Helps organize customer requests so businesses can respond with better context and less manual work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+      <h2>How It Works</h2>
+
+      <div class="steps">
+        <div class="step">
+          <strong>1. Set up the business profile</strong>
+          Add company information, service areas, operating details, and contact information.
+        </div>
+
+        <div class="step">
+          <strong>2. Add services and pricing rules</strong>
+          Configure services offered, base rates, minimum charges, quote assumptions, and policy details.
+        </div>
+
+        <div class="step">
+          <strong>3. Test the agent</strong>
+          Run sample customer scenarios to review how the agent asks questions and prepares quote responses.
+        </div>
+
+        <div class="step">
+          <strong>4. Deploy the website widget</strong>
+          Add the BDA widget to the business website so customers can request quotes directly.
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Disclosure Summary -->
+    <section class="section">
+      <h2>AI-Assisted, Not Fully Automated Decision Making</h2>
+      <p>
+        BDA uses AI to assist with customer intake, quote preparation, response drafting, and quote summaries.
+        Generated quotes are preliminary estimates based on the information available at the time of request.
+      </p>
+      <p>
+        Final pricing may change after inspection, measurement, material confirmation, scheduling review, or changes
+        to project scope. Businesses are responsible for reviewing quotes before treating them as final.
+      </p>
+    </section>
+
+    <!-- Data Handling Summary -->
+    <section class="section">
+      <h2>Data Handling Overview</h2>
+      <p>
+        BDA collects account information, business profile information, service and pricing rules, quote settings,
+        customer quote request details, and subscription status information needed to operate the platform.
+      </p>
+      <p>
+        BDA does not currently rely on business document uploads for onboarding. Business information is entered through
+        structured forms, quote settings, policy fields, and agent preference setup.
+      </p>
+      <p>
+        Payment processing is handled through Stripe. Authentication may be handled through Replit Auth, Clerk, or
+        another authentication provider used by the platform.
+      </p>
+    </section>
+
+    <!-- Legal Documents -->
+    <section class="section">
+      <h2>Legal, Privacy, and Platform Documents</h2>
+      <p>
+        The documents below explain the terms, privacy practices, AI usage, data handling, and ownership details for
+        Business Development Agent.
+      </p>
+
+      <div class="legal-grid">
+        <a class="legal-link" href="BDA - Terms of Service.pdf" target="_blank">
+          <strong>Terms of Service</strong>
+          <span>Platform terms, subscriptions, cancellations, user responsibilities, and limitations.</span>
+        </a>
+
+        <a class="legal-link" href="BDA - Privacy Policy.pdf" target="_blank">
+          <strong>Privacy Policy</strong>
+          <span>Information collected, how it is used, AI processing, data retention, and user rights.</span>
+        </a>
+
+        <a class="legal-link" href="BDA - Acceptable Use Policy.pdf" target="_blank">
+          <strong>Acceptable Use Policy</strong>
+          <span>Rules for responsible use of BDA and prohibited platform activity.</span>
+        </a>
+
+        <a class="legal-link" href="BDA - AI Disclosure.pdf" target="_blank">
+          <strong>AI Disclosure</strong>
+          <span>How BDA uses AI and the limits of AI-generated quotes and responses.</span>
+        </a>
+
+        <a class="legal-link" href="BDA - Data Security.pdf" target="_blank">
+          <strong>Data Processing & Security</strong>
+          <span>Overview of data processing, account separation, subscription access, and security practices.</span>
+        </a>
+
+        <a class="legal-link" href="BDA - Copyright & Intellectual Property Notice.pdf" target="_blank">
+          <strong>Copyright & Intellectual Property</strong>
+          <span>Ownership of BDA software, branding, workflows, widget code, and user-entered content.</span>
+        </a>
+
+        <a class="legal-link" href="BDA - Cookie Policy.pdf" target="_blank">
+          <strong>Cookie Policy</strong>
+          <span>Use of essential cookies, authentication cookies, payment cookies, and preference cookies.</span>
+        </a>
+
+        <a class="legal-link" href="BDA - Legal Contact.pdf" target="_blank">
+          <strong>Contact / Legal Notice</strong>
+          <span>Legal entity, support contact, ownership notice, and official communication details.</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        Business Development Agent is owned and operated by Sean Pelillo Enterprises.
+      </p>
+      <p>
+        © 2026 Sean Pelillo Enterprises. All rights reserved.
+      </p>
+      <p>
+        Contact: <a href="mailto:spelillo11@gmail.com">spelillo11@gmail.com</a>
+      </p>
+    </footer>
+
+  </main>
+</body>
+</html>
