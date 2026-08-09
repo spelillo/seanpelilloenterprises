@@ -54,8 +54,8 @@
             <div class="hero-text">
                 <span class="tag">Predictive Analytics</span>
                 <h1>PitchModel</h1>
-                <p style="font-size: 1.25rem; color: var(--text-muted);">An MLB decision-support tool that uses historical data to forecast the next pitch in real-time.</p>
-                <a href="https://spelillo.shinyapps.io/PitchModel/" target="_blank" class="contact-btn">Launch Application</a>
+                <p style="font-size: 1.25rem; color: var(--text-muted);">A retro, 1990s-desktop-styled MLB decision-support tool that forecasts the next pitch in real-time based on the live game situation.</p>
+                <a href="https://spelillo.github.io/pitchmodel2.0/" target="_blank" class="contact-btn">Launch Application</a>
             </div>
             <div class="hero-image">
                 <img src="pitchmodel.png" alt="PitchModel App View">
@@ -67,20 +67,20 @@
                 <section>
                     <h2>About the Project</h2>
                     <p>In high-stakes baseball, information is everything. <strong>PitchModel</strong> was developed to explore the patterns of MLB pitchers and provide fans or coaches with a "most likely" outcome for the next delivery based on the current game state.</p>
-                    <p style="margin-top: 1rem;">By analyzing thousands of data points including pitch count, runner placement, and previous pitch results, the model identifies tendencies that aren't always visible to the naked eye.</p>
+                    <p style="margin-top: 1rem;">Version 2.0 rebuilds the experience as a standalone web app with a live game-state workspace: set the pitcher, batter, count, outs, and runners, get a top-pitch prediction, then log what was actually thrown to track session accuracy in real time.</p>
                 </section>
 
                 <section style="margin-top: 4rem;">
                     <h2>How It Works</h2>
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 1.5rem;">
-                            <strong>Data Processing:</strong> Utilizes R and Statcast data to build a robust foundation of pitch sequences.
+                            <strong>Data Processing:</strong> Built around Statcast-driven pitch sequences, with a prediction service layer designed as a clean seam for a live FastAPI/KNN backend.
                         </li>
                         <li style="margin-bottom: 1.5rem;">
-                            <strong>Logic Engine:</strong> Employs decision-tree principles to calculate probabilities based on situational variables like "Innings," "Outs," and "Score Differential."
+                            <strong>Logic Engine:</strong> Calculates probabilities from situational variables — count, outs, runners, and inning — and scores each logged pitch two ways: exact-match accuracy and "adjusted" accuracy that credits predictions within the same pitch family (Fastball, Breaking Ball, Offspeed).
                         </li>
                         <li style="margin-bottom: 1.5rem;">
-                            <strong>Interface:</strong> Built with R Shiny to provide a reactive, user-friendly experience that updates predictions instantly as the user toggles game parameters.
+                            <strong>Interface:</strong> Rebuilt in Next.js/React as an interactive, retro 1990s-desktop-styled workspace ("pitchmodel.exe") that updates predictions instantly as the user toggles game parameters.
                         </li>
                     </ul>
                 </section>
@@ -90,8 +90,10 @@
                 <div class="cta-box">
                     <h3 style="font-family: 'Outfit'; margin-bottom: 1rem;">Tech Stack</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span class="tag" style="margin: 0;">R Language</span>
-                        <span class="tag" style="margin: 0;">Shiny</span>
+                        <span class="tag" style="margin: 0;">Next.js</span>
+                        <span class="tag" style="margin: 0;">React</span>
+                        <span class="tag" style="margin: 0;">TypeScript</span>
+                        <span class="tag" style="margin: 0;">Tailwind CSS</span>
                         <span class="tag" style="margin: 0;">Statcast Data</span>
                         <span class="tag" style="margin: 0;">Forecasting</span>
                     </div>
